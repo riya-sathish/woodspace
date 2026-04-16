@@ -1,0 +1,9 @@
+import axios from "axios";
+
+export const fetchFurnitureProducts = async () => {
+  const res = await axios.get(
+    "https://dummyjson.com/products/category/furniture"
+  );
+
+  return res.data.products;
+};

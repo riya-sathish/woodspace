@@ -1,0 +1,300 @@
+
+.hero {
+  height: 80vh;
+  min-height: 550px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+.left,
+.right {
+  z-index: 1;
+  position: relative;
+}
+
+.hero.has-overlay {
+  justify-content: flex-start;
+}
+.hero.has-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.2));
+  z-index: 0;
+}
+
+.hero.has-overlay .left {
+  padding-left: 100px;
+}
+
+.right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.small-images {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.right img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.small-images img {
+  height: 200px;
+}
+
+.big-image img {
+  height: 300px;
+}
+
+
+.left h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.left p {
+  font-size: 16px;
+  color: #f1f1f1;
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+.left button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.left button:hover {
+  background-color: #256428;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(46, 125, 50, 0.35);
+}
+
+img {
+  transition: all 0.5s ease;
+}
+
+
+.hero.has-overlay .left h1 {
+  font-size: 44px;
+  max-width: 600px;
+}
+
+.hero.has-overlay .left p {
+  font-size: 16px;
+  max-width: 480px;
+}
+
+/* BADGE */
+.slide-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #a5d6a7;
+  background: rgba(46, 125, 50, 0.12);
+  border: 1px solid rgba(46, 125, 50, 0.25);
+  padding: 6px 16px;
+  border-radius: 30px;
+  margin-bottom: 18px;
+}
+
+/*  FEATURE PILLS */
+.feature-pills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  
+  margin-top: 6px;
+}
+.pills-stacked {
+align-items: self-start;  
+}
+.pill {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 5px 14px;
+  border-radius: 20px;
+}
+
+/*  DOTS  */
+.hero-dots-center {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 30px 0;
+  background: #ffffff;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #cccccc;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #2e7d32;
+  width: 24px;
+  border-radius: 4px;
+}
+
+
+@media (max-width: 992px) {
+  .hero {
+    height: 75vh;
+    min-height: 500px;
+  }
+
+  .left h1 {
+    font-size: 40px;
+  }
+
+  .small-images img {
+    height: 170px;
+  }
+
+  .big-image img {
+    height: 260px;
+  }
+
+  .hero.has-overlay .left h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: 0;
+    flex-direction: column;
+    padding: 60px 24px 40px;
+    gap: 30px;
+  }
+ .pills-stacked {
+    max-width: 220px;
+    justify-content: center;
+  }
+  .left {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+ 
+  .hero.has-overlay .left {
+    padding-left: 0;       
+    align-items: center;   
+    text-align: center;    
+  }
+
+  .hero.has-overlay::before {
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .left h1 {
+    font-size: 32px;
+  }
+
+  .left p {
+    font-size: 15px;
+  }
+
+  .right {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .small-images img {
+    height: 140px;
+  }
+
+  .big-image img {
+    height: 220px;
+  }
+
+  .hero.has-overlay .left h1 {
+    font-size: 28px;
+    max-width: 100%;
+  }
+
+  .hero.has-overlay .left p {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .hero-dots-center {
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 50px 16px 30px;
+    gap: 24px;
+  }
+
+  .left h1 {
+    font-size: 26px;
+  }
+
+  .hero.has-overlay .left h1 {
+    font-size: 24px;
+  }
+
+  .slide-badge {
+    font-size: 10px;
+    padding: 5px 12px;
+    letter-spacing: 1px;
+  }
+
+  .pill {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  .left button {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .right {
+    gap: 10px;
+  }
+
+  .small-images img {
+    height: 110px;
+  }
+
+  .big-image img {
+    height: 170px;
+  }
+}
